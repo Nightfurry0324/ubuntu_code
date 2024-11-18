@@ -5,8 +5,11 @@ const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const UserAgent = require("user-agents");
 const { WebClient } = require("@slack/web-api");
 const readline = require("readline");
+
 // const chalk = require("chalk");
 let chalk;
+
+require("dotenv").config();
 
 (async () => {
   chalk = (await import("chalk")).default;
@@ -23,10 +26,8 @@ pt.use(StealthPlugin());
 
 const PASSWORD = "testtesttest1";
 
-const SLACK_APP_TOKEN =
-  process.env.SLACK_APP_TOKEN ||
-  "xoxb-80008" + "44044231-80" + "1537229" + "0755-jxHY" + "fNkcElN8t" + "PahemCFDW2q";
-const SLACK_CHANNEL_ID = "C0802" + "U1NQKH";
+const SLACK_APP_TOKEN = process.env.SLACK_APP_TOKEN;
+const SLACK_CHANNEL_ID = process.env.SLACK_CHANNEL_ID;
 
 const web = new WebClient(SLACK_APP_TOKEN);
 
