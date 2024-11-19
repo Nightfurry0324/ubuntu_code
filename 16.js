@@ -26,8 +26,6 @@ pt.use(StealthPlugin());
 
 const PASSWORD = "testtesttest1";
 
-// const SLACK_APP_TOKEN = process.env.SLACK_APP_TOKEN;
-// const SLACK_CHANNEL_ID = process.env.SLACK_CHANNEL_ID;
 const SLACK_APP_TOKEN =
   "xoxb-800084" + "4044231-8043" + "487768405-hjzgz" + "Z1fOczv4vygfTv4iwYV";
 const SLACK_CHANNEL_ID = "U080K" + "UKB3L4";
@@ -382,7 +380,7 @@ async function CheckHumanVerificationPresent(page) {
 
 const getProxy = async () => {
   try {
-    const proxies = await fs.readFile("proxy3.txt", "utf-8");
+    const proxies = await fs.readFile("proxy16.txt", "utf-8");
     const proxyList = proxies
       .split("\n")
       .map((proxy) => proxy.trim())
